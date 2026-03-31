@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat modeBRAVLabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f2f5;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 450px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: #fff; /* Removido o azul sólido para ver o chat */
+            border: 1px solid #ddd;
+        }
+
+        /* Cabeçalho simples */
+        .chat-header {
+            background: #4a90e2;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            margin-bottom: 12px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 85%;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .message.user {
+            background: #4a90e2;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .message.bot {
+            background: #e1e1e1;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .input-container {
+            display: flex;
+            padding: 15px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        #input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        #sendBtn {
+            margin-left: 10px;
+            padding: 0 20px;
+            border: none;
+            background: #4a90e2;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #sendBtn:hover { background: #357ab8; }
+
+        @media (max-width: 500px) {
+            .chat-container { height: 100vh; border-radius: 0; }
+        }
+    </style>
+
+<div class="chat-container">
+    <div class="chat-header">modeBRAVLabs Assistant</div>
+    <div id="messages"></div>
+    <div class="input-container">
+        <input id="input" type="text" placeholder="Digite sua dúvida..." autocomplete="off" />
+        <button id="sendBtn">Enviar</button>
+    </div>
+</div>
+
+<script>
+const messagesDiv = document.getElementById("messages");
+const inputField = document.getElementById("input");
+const sendBtn = document.getElementById("sendBtn");
+
+// 1. Funções de Utilidade
+function normalizeText(text) {
+    return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function matchKeywords(text, keywords) {
+    return keywords.some(keyword => text.includes(normalizeText(keyword)));
+}
+
+function addMessage(text, sender) {
+    const div = document.createElement("div");
+    div.className = `message ${sender}`;
+    div.innerText = text;
+    messagesDiv.appendChild(div);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+// 2. Lógica de Resposta
+function botReply(userText) {
+    const cleanText = normalizeText(userText);
+    let reply = "";
+
+    // Saudações
+    if (matchKeywords(cleanText, ["oi", "ola", "bom dia", "boa tarde", "boa noite"])) {
+        reply = "Olá! Eu sou o assistente da modeBRAVLabs. Como posso te ajudar hoje?";
+    }
+    else if (matchKeywords(cleanText, ["modebravlabs", "mode brav labs"])) {
+        reply = "A modeBRAVLabs foca em tecnologia para evolução pessoal, produtividade e persuasão.";
+    }
+    else if (matchKeywords(cleanText, ["henrique joao muianga", "ceo", "fundador"])) {
+        reply = "Henrique João Muianga é o CEO da modeBRAVLabs, liderando projetos de tecnologia e desenvolvimento.";
+    }
+    // Saúde Mental
+    else if (matchKeywords(cleanText, ["ansiedade", "ansioso", "preocupado"])) {
+        reply = "Gerir a ansiedade envolve respiração, mindfulness e foco no presente. Como você está se sentindo agora?";
+    }
+    else if (matchKeywords(cleanText, ["depressao", "tristeza"])) {
+        reply = "A depressão é séria. Além de buscar hábitos saudáveis, é fundamental conversar com um profissional de saúde.";
+    }
+    // Desenvolvimento e Produtividade
+    else if (matchKeywords(cleanText, ["disciplina", "foco", "vontade"])) {
+        reply = "Disciplina é fazer o que precisa ser feito. Comece pequeno e seja constante.";
+    }
+    else if (matchKeywords(cleanText, ["produtividade", "pomodoro", "organizar"])) {
+        reply = "Para ser produtivo, elimine distrações e foque em uma tarefa por vez. Já tentou a técnica Pomodoro?";
+    }
+    else if (matchKeywords(cleanText, ["pornografia", "vicio", "porno"])) {
+        reply = "Superar vícios exige novos hábitos e entender os gatilhos. Foque na sua evolução pessoal.";
+    }
+    else if (matchKeywords(cleanText, ["opiniao", "critica", "pessoas"])) {
+        reply = "A opinião alheia não define você. Foque nos seus valores e no seu progresso.";
+    }
+    // Padrão
+    else {
+        reply = "Interessante... pode me falar mais sobre isso ou tentar outro assunto como produtividade ou saúde mental?";
+    }
+
+    addMessage(reply, "bot");
+}
+
+// 3. Eventos
+function handleSend() {
+    const text = inputField.value.trim();
+    if (!text) return;
+
+    addMessage(text, "user");
+    inputField.value = "";
+
+    setTimeout(() => botReply(text), 600);
+}
+
+sendBtn.addEventListener("click", handleSend);
+inputField.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") handleSend();
+});
+
+// Mensagem Inicial
+window.onload = () => {
+    addMessage("Bem-vindo ao modeBRAVLabs! Digite algo sobre produtividade, saúde mental ou desenvolvimento pessoal para começarmos.", "bot");
+};
+</script>
+
+</body>
+</html>

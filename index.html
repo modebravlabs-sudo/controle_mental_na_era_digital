@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mente Implacável</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+<style>
+
+body{
+
+font-family:Poppins;
+
+background:linear-gradient(180deg,#05060f,#0a0f2c);
+
+color:white;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* HERO */
+
+.hero{
+
+background:radial-gradient(circle at top,rgba(0,140,255,0.25),transparent 60%);
+
+padding:100px 20px;
+
+}
+
+/* CARDS */
+
+.card{
+
+background:rgba(15,20,60,0.6);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(0,140,255,0.3);
+
+border-radius:20px;
+
+transition:.4s;
+margin: 100px auto;
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px rgba(0,140,255,0.5);
+
+}
+
+/* BUTTON */
+
+.btn-premium{
+
+background:linear-gradient(90deg,#0066ff,#00c3ff);
+
+border:none;
+
+padding:15px;
+
+border-radius:12px;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+transition:.4s;
+
+color:white;
+
+}
+
+.btn-premium:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px #00c3ff;
+
+}
+
+/* BUY BUTTON */
+
+.btn-buy{
+
+display:block;
+
+text-align:center;
+
+margin-top:15px;
+
+padding:12px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:white;
+
+background:linear-gradient(90deg,#0055ff,#00c8ff);
+
+transition:.4s;
+
+}
+
+.btn-buy:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px #00c8ff;
+
+}
+
+/* PRICE */
+
+.price{
+
+margin-top:10px;
+
+font-size:18px;
+
+}
+
+.old{
+
+text-decoration:line-through;
+
+color:#8a8a8a;
+
+margin-right:8px;
+
+}
+
+.new{
+
+color:#00e0ff;
+
+font-weight:700;
+
+font-size:22px;
+
+}
+
+/* GOLD */
+
+.gold{
+
+background:linear-gradient(90deg,#7aa8ff,#00e0ff);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+font-weight:700;
+
+}
+
+/* AUTHORITY */
+
+.authority{
+
+background:linear-gradient(90deg,#040614,#0a1a40);
+
+padding:60px;
+
+border-radius:20px;
+
+border:1px solid rgba(0,140,255,0.2);
+
+}
+
+.authority img{
+
+box-shadow:0 0 30px rgba(0,140,255,0.4);
+
+}
+
+/* TELEGRAM */
+
+.telegram{
+
+max-width:520px;
+
+margin:auto;
+
+background:#0e1621;
+
+border-radius:15px;
+
+border:1px solid rgba(0,136,255,0.2);
+
+overflow:hidden;
+
+}
+
+.telegram-header{
+
+background:#17212b;
+
+padding:12px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.telegram-header img{
+
+width:35px;
+
+margin-right:10px;
+
+}
+
+.telegram-chat{
+
+padding:15px;
+
+}
+
+.msg{
+
+display:flex;
+
+margin-bottom:15px;
+
+}
+
+.msg img{
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+margin-right:10px;
+
+border:2px solid #2aabee;
+
+}
+
+.msg-content{
+
+background:#182533;
+
+padding:10px;
+
+border-radius:10px;
+
+max-width:75%;
+
+}
+
+.msg-name{
+
+font-size:13px;
+
+font-weight:600;
+
+color:#4ea6ff;
+
+}
+
+.msg-name span{
+
+font-size:11px;
+
+color:#7f91a4;
+
+margin-left:6px;
+
+}
+
+.msg-content p{
+
+margin:4px 0 0;
+
+font-size:14px;
+
+color:#d6e2f0;
+
+}
+
+.stat{
+
+font-size:42px;
+
+font-weight:700;
+
+}
+
+footer{
+
+margin-top:60px;
+
+border-top:1px solid rgba(0,140,255,0.2);
+
+}
+
+</style>
+
+<header class="text-center p-4">
+
+<h1 class="fw-bold gold">
+
+MENTE IMPLACÁVEL 🧠
+
+</h1>
+
+<p class="text-secondary">
+
+Elite mental não nasce. É construída.
+
+</p>
+
+</header>
+
+<section class="hero text-center">
+
+<h2 class="display-4 fw-bold">
+
+Domine sua mente como os
+<span class="gold">top 1%</span>
+
+</h2>
+
+<p class="lead text-secondary">
+
+Enquanto a maioria vive distraída,
+uma minoria constrói riqueza,
+disciplina e poder mental.
+
+</p>
+
+<a href="#pedido" class="btn btn-premium btn-lg mt-4">
+
+🚀 Quero mentalidade de elite
+
+</a>
+
+</section>
+
+<!-- PRODUTOS -->
+
+<section class="container">
+
+<h2 class="text-center mb-5 fw-bold">
+
+Produtos de transformação mental
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card h-100">
+
+<img src="Energia mental_na_era_digital.jpeg">
+
+<div class="card-body">
+<h5>Controle Mental</h5>
+<p class="text-secondary">
+Neste material você vai descobrir:
+Como proteger sua energia mental contra o caos digital.
+Estratégias simples para manter foco e clareza em qualquer ambiente.
+Técnicas para transformar distrações em oportunidades de crescimento.
+Um plano estruturado para aumentar sua produtividade sem estresse.
+Este produto é ideal para profissionais, estudantes e empreendedores que desejam dominar sua mente e conquistar resultados extraordinários em um mundo hiperconectado.
+</p>
+<div class="price">
+
+<span class="old">
+
+R$86
+
+</span>
+
+<span class="new">
+
+R$23
+
+</span>
+
+</div>
+
+<a href="https://go.hotmart.com/B105162413D?dp=1"
+
+target="_blank"
+
+class="btn-buy">
+
+🏅 Comprar agora
+
+</a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100">
+
+<img src="Segredo_da_mente.jpeg">
+
+<div class="card-body">
+
+<h5>Mente Tranquila</h5>
+
+<p class="text-secondary">
+
+🧠 Descubra como transformar a ansiedade em foco e equilíbrio.
+🌿 Técnicas simples para acalmar a mente e aumentar a produtividade.
+🚀 Um guia prático para viver com clareza e serenidade no caos moderno.
+
+</p>
+<div class="price">
+
+<span class="old">
+
+R$50
+
+</span>
+
+<span class="new">
+
+R$30
+
+</span>
+
+</div>
+
+<a href="https://pay.hotmart.com/V105162668H"
+
+target="_blank"
+
+class="btn-buy">
+
+🏅 Comprar agora
+
+</a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100">
+
+<img src="O_que_nao_depende_de_ti_nao_importa.png">
+
+<div class="card-body">
+
+<h5>Opinião Alheia</h5>
+
+<p class="text-secondary">
+🧠 Desenvolver clareza mental e disciplina emocional.
+⚡ Reduzir ansiedade e frustração ao aceitar limites.
+🚀 Aumentar produtividade ao investir energia no que depende das suas escolhas.
+🌿 Construir hábitos e mentalidade que fortalecem autonomia e equilíbrio.
+Mais do que leitura, é um manual prático de liberdade interior, que ensina a transformar preocupação em ação estratégica e viver com mais confiança e propósito.
+
+</p>
+
+<div class="price">
+
+<span class="old">
+
+R$97
+
+</span>
+
+<span class="new">
+
+R$59
+
+</span>
+
+</div>
+
+<a href="https://pay.hotmart.com/P105086821O"
+
+target="_blank"
+
+class="btn-buy">
+
+🏅 Comprar agora
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section class="container my-5">
+
+<div class="authority">
+
+<div class="row align-items-center">
+
+<div class="col-md-4 text-center">
+
+<img src="Perfil.png"
+style="width:100px;border-radius:100px;">
+
+</div>
+
+<div class="col-md-8">
+
+<h2>@Henry -Vertex</h2>
+
+<p class="text-secondary">
+Sou Henrique.
+Desenvolvedor de software e profissional de saude.
+Criei estes materiais para ajudar pessoas a desenvolver disciplina real, foco e mentalidade forte
+na era digital.
+</p>
+
+<ul>
+
+<li>Disciplina</li>
+
+<li>Foco</li>
+
+<li>Produtividade</li>
+
+<li>Controle emocional</li>
+
+<li>Mentalidade forte</li>
+
+</ul>
+
+<p class="text-secondary">
+
+Minha missão é ajudar pessoas a evoluírem mentalmente.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ESTATISTICA -->
+
+<section class="container text-center">
+
+<h2 class="mb-5">
+
+Resultados 📊
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="stat gold">
+
++2300
+
+</div>
+
+<p class="text-secondary">
+
+Leitores
+
+</p>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="stat gold">
+
+97%
+
+</div>
+
+<p class="text-secondary">
+
+Aprovam
+
+</p>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="stat gold">
+
++150
+
+</div>
+
+<p class="text-secondary">
+
+Feedbacks
+
+</p>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="stat gold">
+
+3 anos
+
+</div>
+
+<p class="text-secondary">
+
+Estudo mentalidade
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DEPOIMENTOS -->
+
+<section class="container my-5">
+
+<h3 class="text-center mb-4">
+
+Resultados dos leitores
+
+</h3>
+
+<div class="telegram">
+
+<div class="telegram-header">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+
+<strong>Mente Implacável VIP</strong>
+
+</div>
+
+<div class="telegram-chat">
+
+<div class="msg">
+
+<img src="https://i.pravatar.cc/40?img=12">
+
+<div class="msg-content">
+
+<div class="msg-name">
+
+Rafael
+
+</div>
+
+<p>
+
+Mudou minha disciplina.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="msg">
+
+<img src="https://i.pravatar.cc/40?img=22">
+
+<div class="msg-content">
+
+<div class="msg-name">
+
+Carla
+
+</div>
+
+<p>
+
+Muito prático.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="msg">
+
+<img src="https://i.pravatar.cc/40?img=33">
+
+<div class="msg-content">
+
+<div class="msg-name">
+
+Lucas
+
+</div>
+
+<p>
+
+Recomendo.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LEADS -->
+
+<section id="pedido" class="container my-5">
+
+<div class="card p-4">
+
+<h3 class="text-center mb-4">
+
+📩 Receber E-book
+
+</h3>
+
+<form id="formPedido">
+
+<input
+placeholder="Seu nome"
+class="form-control mb-3"
+required>
+
+<input
+placeholder="WhatsApp"
+class="form-control mb-3"
+required>
+
+<select class="form-select mb-3">
+
+<option>
+
+Escolha ebook
+
+</option>
+
+<option>
+
+Controle Mental
+
+</option>
+
+<option>
+
+Mente Tranquila
+
+</option>
+
+<option>
+
+Opinião Alheia
+
+</option>
+
+</select>
+
+<button class="btn btn-premium w-100">
+
+🚀 Receber acesso
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section class="text-center">
+
+<h2>
+
+Sua mente pode mudar sua vida.
+
+</h2>
+
+<p class="text-secondary">
+
+Decida evoluir hoje.
+
+</p>
+
+<a href="#pedido"
+
+class="btn btn-premium">
+
+COMEÇAR AGORA
+
+</a>
+
+</section>
+
+<footer class="text-center p-4">
+
+<p class="text-secondary">
+
+© ModeBravhLabs
+
+</p>
+<a href="meu_site.html" alt="meu_site.html">Conheça modebravlabs</a>
+</footer>
+
+<script>
+
+document
+.getElementById("formPedido")
+
+.addEventListener(
+
+"submit",
+
+function(e){
+
+e.preventDefault();
+
+alert("Lead capturado");
+
+});
+
+</script>
+
+</body>
+
+  </html>
